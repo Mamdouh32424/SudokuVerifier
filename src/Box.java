@@ -1,14 +1,14 @@
 //indices of the boxes
-// 1 -> 00
-// 2 -> 03
-// 3 -> 06
-// 4 -> 30
-// 5 -> 33
-// 6 -> 36
-// 7 -> 60
-// 8 -> 63
-// 9 -> 66
-// n -> ((n-1)/3 * 3) (((n-1)%3)*3)
+// 0 -> 00
+// 1 -> 03
+// 2 -> 06
+// 3 -> 30
+// 4 -> 33
+// 5 -> 36
+// 6 -> 60
+// 7 -> 63
+// 8 -> 66
+// n -> ((n/3) * 3) ((n%3)*3)
 
 
 import javax.swing.*;
@@ -17,8 +17,8 @@ public class Box extends GridElement{
 
     public Box(int[][] grid,int boxNumber){
         super(grid,boxNumber);
-        this.rowNumber = ((boxNumber-1)/3) * 3;
-        this.columnNumber = ((boxNumber-1)%3)*3;
+        this.rowNumber = ((boxNumber)/3) * 3;
+        this.columnNumber = ((boxNumber)%3)*3;
     }
 
     public boolean scan(){
