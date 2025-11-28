@@ -32,6 +32,9 @@ public class Main {
 
         Mode0 mode0 = new Mode0(grid);
         mode0.run();
+        System.out.println();
+        Mode3 mode3 = new Mode3(grid);
+        mode3.run();
 
     }
 }
