@@ -25,12 +25,9 @@ public class Main {
         }
         return;
     }
-
-
-
-
+    
     public static void main(String[] args) {
-        String file = "src/Data2.csv";
+        String file = "src/Data1.csv";
         readFromFile(file);
 
         Mode0 mode0 = new Mode0(grid);

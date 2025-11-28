@@ -4,7 +4,7 @@ import java.util.List;
 public class Row extends GridElement{
 
     public  Row(int[][] grid, int rowNumber) {
-        super(grid, rowNumber);
+        super(grid, rowNumber,Type.ROW);
     }
 
 
@@ -16,15 +16,5 @@ public class Row extends GridElement{
         }
         return flag;
     }
-
-    public void printError(){
-        for(int i = 1;i <= 9;i++){
-            if(locations[i].length() > 1) {
-                System.out.println("ROW " + Integer.toString(rowNumber + 1) + ", #" + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split("")) + "]");
-            }
-        }
-    }
-
-
 
 }
