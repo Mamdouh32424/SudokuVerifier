@@ -5,23 +5,31 @@ import java.util.List;
 // we start the grid at 0,0
 
 public abstract class GridElement {
+    enum Type{
+        ROW,
+        COL,
+        BOX;
+    }
 
     protected int[][] grid = new int[9][9];
     protected int rowNumber;
     protected int columnNumber;
     protected int boxNumber;
+    private int elementNumber;
     protected StringBuilder[] locations = new StringBuilder[10];
-
+    protected Type type;
     // locations is an array that, for all numbers, would have a string of all the indices of its occurrence
     // Since the indices are 1-9 (i.e. one digit):
     // we could use the .length() to get the number of occurrences
     // we could use the .split() when printing, to eliminate other iterations of the row
 
-    public GridElement(int[][] grid,int elementNumber) {
+    public GridElement(int[][] grid,int elementNumber, Type type) {
         this.grid = grid;
+        this.type = type;
         for(int i = 0; i < 10; i++){
             locations[i] = new StringBuilder();
         }
+        this.elementNumber = elementNumber;
         this.rowNumber = elementNumber;
         this.columnNumber = elementNumber;
         this.boxNumber = elementNumber;
@@ -29,9 +37,13 @@ public abstract class GridElement {
 
     abstract public boolean scan();
 
-    abstract public void printError();
-
-
+    public void printError(){
+        for(int i = 1;i <= 9;i++){
+            if(locations[i].length() > 1) {
+                System.out.println(type.toString() +" " + Integer.toString(elementNumber + 1) + ", #" + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split("")) + "]");
+            }
+        }
+    }
 
 
 }

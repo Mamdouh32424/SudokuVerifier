@@ -1,8 +1,7 @@
 public class Column extends GridElement{
-    private int columnNumber;
 
     public  Column(int[][] grid, int columnNumber) {
-        super(grid, columnNumber);
+        super(grid, columnNumber,Type.COL);
     }
     public boolean scan(){
         boolean flag = true;
@@ -13,11 +12,4 @@ public class Column extends GridElement{
         return flag;
     }
 
-    public void printError(){
-        for(int i = 1;i <= 9;i++){
-            if(locations[i].length() > 1) {
-                System.out.println("COL " + Integer.toString(columnNumber + 1) + ", #" + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split(",")) + "]");
-            }
-        }
-    }
 }
