@@ -35,7 +35,7 @@ public class Box extends GridElement{
     public void printError(){
         for(int i = 1;i <= 9;i++){
             if(locations[i].length() > 1) {
-                System.out.println("BOX " + Integer.toString(boxNumber + 1) + ", #" + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split(",")) + "]");
+                System.out.println("BOX " + Integer.toString(boxNumber + 1) + ", #" + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split("")) + "]");
             }
         }
     }

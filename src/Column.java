@@ -1,5 +1,4 @@
 public class Column extends GridElement{
-    private int columnNumber;
 
     public  Column(int[][] grid, int columnNumber) {
         super(grid, columnNumber);
@@ -16,7 +15,7 @@ public class Column extends GridElement{
     public void printError(){
         for(int i = 1;i <= 9;i++){
             if(locations[i].length() > 1) {
-                System.out.println("COL " + Integer.toString(columnNumber + 1) + ", #" + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split(",")) + "]");
+                System.out.println("COL " + Integer.toString(columnNumber + 1) + ", #" + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split("")) + "]");
             }
         }
     }
