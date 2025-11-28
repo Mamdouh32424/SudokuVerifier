@@ -7,8 +7,12 @@ public class RowManager extends Thread{
         status = true;
     }
 
+    public void run27(){ // for mode27
+
+    }
+
     @Override
-    public void run(){
+    public void run(){ // for mode 3
         for(int i = 0; i < 9; i++){
             rows[i] = new Row(grid,i);
             status &= rows[i].scan();

@@ -49,7 +49,8 @@ public abstract class GridElement extends Thread{
 
     @Override
     public void run() {// for the mode27
-        scan(); // not sure if that's what i want it to do yet
+        scan();
+        Mode27.setStatus(Mode27.getStatus() & this.status);
     }
 
 
