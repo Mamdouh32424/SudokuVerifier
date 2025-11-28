@@ -22,14 +22,13 @@ public class Box extends GridElement{
     }
 
     public boolean scan(){
-        boolean flag = true;
         for(int i=0 ;i < 9 ; i++){
             int x = columnNumber + (i%3);
             int y = rowNumber + (i/3);
             locations[grid[y][x]].append(Integer.toString(i+1));
-            flag &= locations[grid[y][x]].length() == 1;
+            status &= locations[grid[y][x]].length() == 1;
         }
-        return flag;
+        return status;
     }
 
 }

@@ -4,7 +4,7 @@ import java.util.List;
 // array[y][x] ... for anyone reading this, to not get confused
 // we start the grid at 0,0
 
-public abstract class GridElement {
+public abstract class GridElement extends Thread{
     enum Type{
         ROW,
         COL,
@@ -16,8 +16,9 @@ public abstract class GridElement {
     protected int columnNumber;
     protected int boxNumber;
     private int elementNumber;
-    protected StringBuilder[] locations = new StringBuilder[10];
     protected Type type;
+    protected boolean status;
+    protected StringBuilder[] locations = new StringBuilder[10];
     // locations is an array that, for all numbers, would have a string of all the indices of its occurrence
     // Since the indices are 1-9 (i.e. one digit):
     // we could use the .length() to get the number of occurrences
@@ -33,6 +34,7 @@ public abstract class GridElement {
         this.rowNumber = elementNumber;
         this.columnNumber = elementNumber;
         this.boxNumber = elementNumber;
+        this.status = true;
     }
 
     abstract public boolean scan();
@@ -45,5 +47,13 @@ public abstract class GridElement {
         }
     }
 
+    @Override
+    public void run() {// for the mode27
+        scan(); // not sure if that's what i want it to do yet
+    }
 
+
+    public boolean getStatus() {
+        return status;
+    }
 }
