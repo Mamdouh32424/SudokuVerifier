@@ -2,11 +2,11 @@ public class BoxManager extends Thread{
     private int [][] grid;
     private Box[] boxes = new Box[9];
     private static boolean status;
-    public BoxManager(int[][] grid) {
-        this.grid = grid;
+    public BoxManager() {
+        this.grid = Board.getGrid();
         status = true;
         for(int i = 0; i < 9; i++){
-            boxes[i] = new Box(grid,i);
+            boxes[i] = new Box(i);
         }
     }
 

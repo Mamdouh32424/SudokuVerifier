@@ -3,6 +3,7 @@ import java.util.List;
 
 // array[y][x] ... for anyone reading this, to not get confused
 // we start the grid at 0,0
+// but in the locations[] array, the first index is skipped ,i.e. we use locations[1-9]
 
 public abstract class GridElement extends Thread{
     enum Type{
@@ -24,8 +25,8 @@ public abstract class GridElement extends Thread{
     // we could use the .length() to get the number of occurrences
     // we could use the .split() when printing, to eliminate other iterations of the row
 
-    public GridElement(int[][] grid,int elementNumber, Type type) {
-        this.grid = grid;
+    public GridElement(int elementNumber, Type type) {
+        this.grid = Board.getGrid();
         this.type = type;
         for(int i = 0; i < 10; i++){
             locations[i] = new StringBuilder();

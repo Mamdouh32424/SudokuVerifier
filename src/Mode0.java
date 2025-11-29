@@ -9,17 +9,17 @@ public class Mode0 {
     private ColumnManager columnManager;
     private BoxManager boxManager;
 
-    public Mode0(int[][] grid) {
-        this.grid = grid;
+    public Mode0() {
+        this.grid = Board.getGrid();
 
 //        for(int i = 0; i < 9; i++){
 //            rows[i] = new Row(grid,i);
 //            columns[i] = new Column(grid,i);
 //            boxes[i] = new Box(grid,i);
 //        }
-        this.rowManager = new RowManager(grid);
-        this.columnManager = new ColumnManager(grid);
-        this.boxManager = new BoxManager(grid);
+        this.rowManager = new RowManager();
+        this.columnManager = new ColumnManager();
+        this.boxManager = new BoxManager();
 
     }
 
