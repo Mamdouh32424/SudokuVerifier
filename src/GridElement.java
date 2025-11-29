@@ -3,6 +3,7 @@ import java.util.List;
 
 // array[y][x] ... for anyone reading this, to not get confused
 // we start the grid at 0,0
+// but in the locations[] array, the first index is skipped ,i.e. we use locations[1-9]
 
 public abstract class GridElement extends Thread{
     enum Type{
