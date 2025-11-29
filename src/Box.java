@@ -15,8 +15,8 @@ import javax.swing.*;
 
 public class Box extends GridElement{
 
-    public Box(int[][] grid,int boxNumber){
-        super(grid,boxNumber,Type.BOX);
+    public Box(int boxNumber){
+        super(boxNumber,Type.BOX);
         this.rowNumber = ((boxNumber)/3) * 3;
         this.columnNumber = ((boxNumber)%3)*3;
     }

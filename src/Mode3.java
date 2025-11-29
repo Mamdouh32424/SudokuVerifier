@@ -4,11 +4,11 @@ public class Mode3{
     private ColumnManager columnManager;
     private BoxManager boxManager;
 
-    public Mode3(int[][] grid) {
-        this.grid = grid;
-        this.rowManager = new RowManager(grid);
-        this.columnManager = new ColumnManager(grid);
-        this.boxManager = new BoxManager(grid);
+    public Mode3() {
+        this.grid = Board.getGrid();
+        this.rowManager = new RowManager();
+        this.columnManager = new ColumnManager();
+        this.boxManager = new BoxManager();
     }
 
     public void run() {

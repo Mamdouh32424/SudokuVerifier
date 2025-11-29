@@ -5,13 +5,13 @@ public class Mode27 {
     private ColumnManager columnManager;
     private BoxManager boxManager;
 
-    public Mode27(int[][] grid) {
-        this.grid = grid;
+    public Mode27() {
+        this.grid = Board.getGrid();
 
 
-        rowManager = new RowManager(grid);
-        columnManager = new ColumnManager(grid);
-        boxManager = new BoxManager(grid);
+        rowManager = new RowManager();
+        columnManager = new ColumnManager();
+        boxManager = new BoxManager();
     }
 
     public void run() {

@@ -2,11 +2,11 @@ public class RowManager extends Thread{
     private int [][] grid;
     private Row[] rows = new Row[9];
     private static boolean status;
-    public RowManager(int[][] grid) {
-        this.grid = grid;
+    public RowManager() {
+        this.grid = Board.getGrid();
         status = true;
         for(int i = 0; i < 9; i++){
-            rows[i] = new Row(grid,i);
+            rows[i] = new Row(i);
         }
     }
 

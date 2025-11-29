@@ -3,8 +3,8 @@ import java.util.List;
 
 public class Row extends GridElement{
 
-    public  Row(int[][] grid, int rowNumber) {
-        super(grid, rowNumber,Type.ROW);
+    public  Row(int rowNumber) {
+        super(rowNumber,Type.ROW);
     }
 
 

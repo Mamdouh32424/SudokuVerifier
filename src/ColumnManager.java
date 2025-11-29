@@ -3,11 +3,11 @@ public class ColumnManager extends Thread{
     private Column[] columns =  new Column[9];
     private static boolean status;
 
-    public ColumnManager(int[][] grid) {
-        this.grid = grid;
+    public ColumnManager() {
+        this.grid = Board.getGrid();
         status = true;
         for(int i = 0; i < 9; i++){
-            columns[i] = new Column(grid,i);
+            columns[i] = new Column(i);
         }
     }
 

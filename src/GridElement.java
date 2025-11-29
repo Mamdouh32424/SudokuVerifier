@@ -25,8 +25,8 @@ public abstract class GridElement extends Thread{
     // we could use the .length() to get the number of occurrences
     // we could use the .split() when printing, to eliminate other iterations of the row
 
-    public GridElement(int[][] grid,int elementNumber, Type type) {
-        this.grid = grid;
+    public GridElement(int elementNumber, Type type) {
+        this.grid = Board.getGrid();
         this.type = type;
         for(int i = 0; i < 10; i++){
             locations[i] = new StringBuilder();

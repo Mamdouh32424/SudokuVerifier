@@ -1,7 +1,7 @@
 public class Column extends GridElement{
 
-    public  Column(int[][] grid, int columnNumber) {
-        super(grid, columnNumber,Type.COL);
+    public  Column(int columnNumber) {
+        super(columnNumber,Type.COL);
     }
     public boolean scan(){
         for(int i = 0 ; i < 9 ;i++){
