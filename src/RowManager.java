@@ -10,7 +10,7 @@ public class RowManager extends Thread{
         }
     }
 
-    public void startRows(){ // for mode27
+    public void startRows(){ // for mode27, start each grid element as its own thread
         for (int i = 0; i < 9; i++) {
             rows[i].start();
         }
@@ -28,7 +28,7 @@ public class RowManager extends Thread{
 
 
     @Override
-    public void run(){ // for mode 3
+    public void run(){ // for mode 3 and 0
         for(int i = 0; i < 9; i++){
             status &= rows[i].scan();
         }
