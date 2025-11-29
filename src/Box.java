@@ -30,5 +30,10 @@ public class Box extends GridElement{
         }
         return status;
     }
+    @Override
+    public void run() {// for the mode27
+        scan();
+        BoxManager.setStatus(BoxManager.getStatus() & this.status);
+    }
 
 }

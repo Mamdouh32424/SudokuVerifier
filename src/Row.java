@@ -16,4 +16,10 @@ public class Row extends GridElement{
         return status;
     }
 
+    @Override
+    public void run() {// for the mode27
+        scan();
+        RowManager.setStatus(RowManager.getStatus() & this.status);
+    }
+
 }

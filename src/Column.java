@@ -11,4 +11,10 @@ public class Column extends GridElement{
         return status;
     }
 
+    @Override
+    public void run() {// for the mode27
+        scan();
+        ColumnManager.setStatus(ColumnManager.getStatus() & this.status);
+    }
+
 }
