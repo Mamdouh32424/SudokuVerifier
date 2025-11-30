@@ -1,14 +1,9 @@
 public class Mode27 {
-    private int[][] grid;
-
     private RowManager rowManager;
     private ColumnManager columnManager;
     private BoxManager boxManager;
 
     public Mode27() {
-        this.grid = Board.getGrid();
-
-
         rowManager = new RowManager();
         columnManager = new ColumnManager();
         boxManager = new BoxManager();
@@ -23,10 +18,9 @@ public class Mode27 {
         columnManager.joinColumns();
         boxManager.joinBoxes();
 
-        if(rowManager.getStatus() && columnManager.getStatus() && boxManager.getStatus()) {
+        if (RowManager.getStatus() && ColumnManager.getStatus() && BoxManager.getStatus()) {
             System.out.println("Valid");
-        }
-        else {
+        } else {
             System.out.println("Invalid");
             rowManager.printError();
             System.out.println("------------------------------------------");

@@ -1,12 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
-
 // array[y][x] ... for anyone reading this, to not get confused
 // we start the grid at 0,0
 // but in the locations[] array, the first index is skipped ,i.e. we use locations[1-9]
 
-public abstract class GridElement extends Thread{
-    enum Type{
+public abstract class GridElement extends Thread {
+    enum Type {
         ROW,
         COL,
         BOX;
@@ -20,15 +17,17 @@ public abstract class GridElement extends Thread{
     protected Type type;
     protected boolean status;
     protected StringBuilder[] locations = new StringBuilder[10];
-    // locations is an array that, for all numbers, would have a string of all the indices of its occurrence
+    // locations is an array that, for all numbers, would have a string of all the
+    // indices of its occurrence
     // Since the indices are 1-9 (i.e. one digit):
     // we could use the .length() to get the number of occurrences
-    // we could use the .split() when printing, to eliminate other iterations of the row
+    // we could use the .split() when printing, to eliminate other iterations of the
+    // row
 
     public GridElement(int elementNumber, Type type) {
         this.grid = Board.getGrid();
         this.type = type;
-        for(int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
             locations[i] = new StringBuilder();
         }
         this.elementNumber = elementNumber;
@@ -40,14 +39,14 @@ public abstract class GridElement extends Thread{
 
     abstract public boolean scan();
 
-    public void printError(){
-        for(int i = 1;i <= 9;i++){
-            if(locations[i].length() > 1) {
-                System.out.println(type.toString() +" " + Integer.toString(elementNumber + 1) + ", #" + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split("")) + "]");
+    public void printError() {
+        for (int i = 1; i <= 9; i++) {
+            if (locations[i].length() > 1) {
+                System.out.println(type.toString() + " " + Integer.toString(elementNumber + 1) + ", #"
+                        + Integer.toString(i) + " [" + String.join(",", locations[i].toString().split("")) + "]");
             }
         }
     }
-
 
     public boolean getStatus() {
         return status;

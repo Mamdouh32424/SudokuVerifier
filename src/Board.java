@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Board {
-    private static int [][] grid;
+    private static int[][] grid;
 
     public static void readFromFile(String fileName) {
         grid = new int[9][9];
@@ -14,10 +14,10 @@ public class Board {
             return;
         try (BufferedReader br = Files.newBufferedReader(p)) {
             String line;
-            int i=0;
+            int i = 0;
             while ((line = br.readLine()) != null) {
                 String[] split = line.split(",");
-                for(int j=0;j<9;j++){
+                for (int j = 0; j < 9; j++) {
                     grid[i][j] = Integer.parseInt(split[j]);
                 }
                 i++;
@@ -27,8 +27,6 @@ public class Board {
         }
         return;
     }
-
-
 
     public static int[][] getGrid() {
         return grid;
